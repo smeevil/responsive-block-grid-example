@@ -1,0 +1,34 @@
+<head>
+    <title>reactive-block-grid</title>
+</head>
+
+<body>
+<h1>Reactive block grid : Demo</h1>
+
+{{> example}}
+
+</body>
+
+<template name="example">
+    <h2>Block style</h2>
+    <button class="js-add-item">Add new item</button>
+    <button class="js-remove-item">Remove random item</button>
+    <button class="js-reset">Reset DB</button>
+    {{> reactiveBlockGrid cssClass="blocks" cursor=exampleBlocksCursor template='exampleTemplate'}}
+
+    <hr/>
+
+    <h2>Pintrest style</h2>
+    {{> reactiveBlockGrid cssClass="pintrest" cursor=examplePintrestCursor template='exampleTemplate'}}
+    <button class="js-add-item">Add new item</button>
+    <button class="js-remove-item">Remove random item</button>
+    <button class="js-reset">Reset DB</button>
+</template>
+
+<template name="exampleTemplate">
+    <div class="photo">
+        <h3>{{title}}</h3>
+        <img src="{{imageUrl}}"/>
+        <p>{{description}}</p>
+    </div>
+</template>
